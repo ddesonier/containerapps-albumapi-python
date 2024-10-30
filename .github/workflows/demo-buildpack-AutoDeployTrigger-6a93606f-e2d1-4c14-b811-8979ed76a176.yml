@@ -41,7 +41,7 @@ jobs:
           registryUsername: ${{ secrets.DEMOBUILDPACK_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.DEMOBUILDPACK_REGISTRY_PASSWORD }}
           containerAppName: demo-buildpack
-          resourceGroup: demo-BuildPack3-rg
+          resourceGroup: demo-BuildPack5-rg
           imageToBuild: ca6615fdb4f9acr.azurecr.io/demo-buildpack:${{ github.sha }}
           
             
