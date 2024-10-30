@@ -36,7 +36,7 @@ jobs:
         with:
           appSourcePath: ${{ github.workspace }}/src
           dockerfilePath: _dockerfilePath_
-          acrName: mytestacr
+          acrName: ca639c02fe46acr
           acrUsername: ${{ secrets.DEMOBUILDPACK_REGISTRY_USERNAME }}
           acrPassword: ${{ secrets.DEMOBUILDPACK_REGISTRY_PASSWORD }}
           # registryUrl: ca639c02fe46acr.azurecr.io
