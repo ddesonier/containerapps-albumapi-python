@@ -1,6 +1,6 @@
 FROM python:3.11
 WORKDIR /code
-COPY ./src/app/requirements.txt .
+COPY ./app/requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
 EXPOSE 8080
