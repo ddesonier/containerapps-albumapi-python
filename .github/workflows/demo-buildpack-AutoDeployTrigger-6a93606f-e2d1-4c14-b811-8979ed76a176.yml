@@ -25,7 +25,7 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.DEMOBUILDPACK_AZURE_CREDENTIALS }}
-          subscription: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
 
 
