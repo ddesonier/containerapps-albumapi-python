@@ -31,21 +31,21 @@ jobs:
         #   tenant-id: ${{ secrets.DEMOBUILDPACK_AZURE_ID }}
         #   subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Log in to ACR
-        run: |
-          az acr login --name ca639c02fe46acr
-  
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }}/src
           _dockerfilePathKey_: _dockerfilePath_
-          registryUrl: ca639c02fe46acr.azurecr.io
-          registryUsername: ${{ secrets.DEMOBUILDPACK_REGISTRY_USERNAME }}
-          registryPassword: ${{ secrets.DEMOBUILDPACK_REGISTRY_PASSWORD }}
+          acrName: mytestacr
+          acrUsername: ${{ secrets.DEMOBUILDPACK_REGISTRY_USERNAME }}
+          acrPassword: ${{ secrets.DEMOBUILDPACK_REGISTRY_PASSWORD }}
+          # registryUrl: ca639c02fe46acr.azurecr.io
+          # registryUsername: ${{ secrets.DEMOBUILDPACK_REGISTRY_USERNAME }}
+          # registryPassword: ${{ secrets.DEMOBUILDPACK_REGISTRY_PASSWORD }}
           containerAppName: demo-buildpack
           resourceGroup: demo-BuildPack5-rg
           imageToBuild: ca639c02fe46acr.azurecr.io/demo-buildpack:${{ github.sha }}
+
           
             
 
